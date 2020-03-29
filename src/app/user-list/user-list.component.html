@@ -1,0 +1,28 @@
+<div class="container-fluid col-11">
+    <h1 class="display-1">All Registred Users</h1>
+    <table class="table table-dark table-striped mt-4">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Date of Birth</th>
+                <th>Phone Number</th>
+                <th>EDIT</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.userID}}</td>
+                <td>{{user.fullName}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.dob | date}}</td>
+                <td>{{user.phoneNumber}}</td>
+                <td><a><i class="fa fa-pencil
+                            fa-2x"></i></a> | <a
+                        (click)="deleteUser(user)"><i
+                            class="fa fa-trash fa-2x"></i></a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
