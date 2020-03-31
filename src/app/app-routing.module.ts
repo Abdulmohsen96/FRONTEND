@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'header', component: HeaderComponent },
   { path: 'footer', component: FooterComponent },
   { path: 'users', component: UserListComponent },
-  { path: 'profile', component: ProfileComponent }
+  { path: 'profile/:id', component: ProfileComponent }
 ];
 
 @NgModule({
