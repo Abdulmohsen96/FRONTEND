@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../service/user.service';
 import { User } from '../model/user';
-
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
@@ -10,6 +9,8 @@ import { User } from '../model/user';
 export class UserListComponent implements OnInit {
 
   users: User[];
+
+  ListSharedID: number;
 
   constructor(private userService: UserService) { }
 
@@ -32,5 +33,9 @@ export class UserListComponent implements OnInit {
         this.users.splice(index, 1);
       }
     )
+  }
+
+  profilePage(userID: number) {
+    this.ListSharedID = userID;
   }
 }

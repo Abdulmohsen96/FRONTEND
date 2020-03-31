@@ -11,14 +11,26 @@
 
     <div class="collapse navbar-collapse" id="exan">
       <div class="navbar-nav">
-        <a class="nav-item nav-link" routerLink="/"><i class="fa fa-home"></i>
+        <a class="nav-item nav-link" routerLink="/" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}"><i
+            class="fa fa-home"></i>
           Home</a>
-        <a class="nav-item nav-link" routerLink="/registration"><i class="fa
+        <a class="nav-item nav-link" routerLink="/registration"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}"><i class="fa
             fa-user-plus"></i> Register</a>
-        <a class="nav-item nav-link" routerLink="/login"><i class="fa
+        <a class="nav-item nav-link" routerLink="/login"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}"><i class="fa
             fa-sign-in"></i> Login</a>
-        <a class="nav-item nav-link" routerLink="/about"><i class="fa fa-info"></i>
-          About</a>
+        <a class="nav-item nav-link" routerLink="/users"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}"><i class="fa fa-users"></i>
+          Users</a>
+        <a class="nav-item nav-link" routerLink="/profile"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}"><i class="fa fa-user"></i>
+          Profile</a>
       </div>
     </div>
   </div>
