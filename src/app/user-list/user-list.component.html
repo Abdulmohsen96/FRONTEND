@@ -8,7 +8,6 @@
                 <th>Email</th>
                 <th>Date of Birth</th>
                 <th>Phone Number</th>
-                <th>EDIT</th>
             </tr>
         </thead>
         <tbody>
@@ -18,9 +17,6 @@
                 <td>{{user.email}}</td>
                 <td>{{user.dob | date: 'dd/MM/yyyy'}}</td>
                 <td>{{user.phoneNumber}}</td>
-                <td><a (click)="deleteUser(user)"><i class="fa fa-trash fa-2x"></i></a>
-                    | <a (click)="profilePage(user.userID)"><i class="fa
-                            fa-user-circle fa-2x"></i></a></td>
             </tr>
         </tbody>
     </table>

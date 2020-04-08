@@ -7,4 +7,5 @@ export class User {
     password: string;
     nationalID: string;
     enabled: number;
+    authdata?: string;
 }

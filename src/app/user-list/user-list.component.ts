@@ -22,6 +22,7 @@ export class UserListComponent implements OnInit {
     this.userService.getAllUsers().subscribe(
       result => {
         this.users = result;
+        console.log(result);
       }
     )
   }
@@ -35,7 +36,4 @@ export class UserListComponent implements OnInit {
     )
   }
 
-  profilePage(userID: number) {
-    this.router.navigate(['/profile', userID])
-  }
 }

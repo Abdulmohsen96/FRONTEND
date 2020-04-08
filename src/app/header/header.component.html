@@ -1,6 +1,8 @@
 <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
   <div class="container-fluid">
-    <span class="navbar-brand mb-0 h1">WATTHEQ</span>
+    <div class="navbar-header">
+      <span class="navbar-brand mb-0 h1">WATTHEQ</span>
+    </div>
 
     <button class="navbar-toggler" type="button"
       data-toggle="collapse"
@@ -10,27 +12,44 @@
     </button>
 
     <div class="collapse navbar-collapse" id="exan">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link" routerLink="/" routerLinkActive="active"
+      <div class="nav navbar-nav">
+
+        <a class="nav-item nav-link" routerLink="/home"
+          routerLinkActive="active"
           [routerLinkActiveOptions]="{exact: true}"><i
             class="fa fa-home"></i>
           Home</a>
+
         <a class="nav-item nav-link" routerLink="/registration"
           routerLinkActive="active"
-          [routerLinkActiveOptions]="{exact: true}"><i class="fa
+          [routerLinkActiveOptions]="{exact: true}" *ngIf="!isLogged()"><i
+            class="fa
             fa-user-plus"></i> Register</a>
+
         <a class="nav-item nav-link" routerLink="/login"
           routerLinkActive="active"
-          [routerLinkActiveOptions]="{exact: true}"><i class="fa
+          [routerLinkActiveOptions]="{exact: true}" *ngIf="!isLogged()"><i
+            class="fa
             fa-sign-in"></i> Login</a>
+
         <a class="nav-item nav-link" routerLink="/users"
           routerLinkActive="active"
-          [routerLinkActiveOptions]="{exact: true}"><i class="fa fa-users"></i>
+          [routerLinkActiveOptions]="{exact: true}" *ngIf="isLogged()"><i
+            class="fa fa-users"></i>
           Users</a>
+
         <a class="nav-item nav-link" routerLink="/profile"
           routerLinkActive="active"
-          [routerLinkActiveOptions]="{exact: true}"><i class="fa fa-user"></i>
+          [routerLinkActiveOptions]="{exact: true}" *ngIf="isLogged()"><i
+            class="fa fa-user"></i>
           Profile</a>
+
+        <a class="nav-item nav-link"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}" *ngIf="isLogged()"
+          (click)="logout()" routerLink="/login"><i class="fa fa-remove"></i>
+          Logout</a>
+
       </div>
     </div>
   </div>
