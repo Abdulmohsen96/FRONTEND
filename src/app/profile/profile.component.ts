@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
-import { User } from '../model/user';
-import { UserService } from '../service/user.service';
+import { User } from '../user/user';
+import { UserService } from '../user/user.service';
 import { AuthenticationService } from '../authentication/authentication.service';
 
 @Component({
@@ -11,6 +11,7 @@ import { AuthenticationService } from '../authentication/authentication.service'
 })
 export class ProfileComponent implements OnInit {
   user: User;
+  show = false;
 
   constructor(private route: ActivatedRoute, private userService: UserService, private authService: AuthenticationService) { }
 
@@ -24,5 +25,9 @@ export class ProfileComponent implements OnInit {
         this.user = result;
       }
     )
+  }
+
+  toggle() {
+    this.show = !this.show;
   }
 }

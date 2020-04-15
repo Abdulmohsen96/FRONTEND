@@ -4,11 +4,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { AboutComponent } from './about/about.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { ProfileComponent } from './profile/profile.component';
-import { LogoutComponent } from './logout/logout.component';
 import { AuthGuard } from './authentication/auth.guard';
 
 
@@ -18,7 +15,6 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
   { path: 'header', component: HeaderComponent },
-  { path: 'footer', component: FooterComponent },
   { path: 'users', component: UserListComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'logout', component: LoginComponent },
