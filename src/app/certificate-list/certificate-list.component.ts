@@ -17,7 +17,7 @@ export class CertificateListComponent implements OnInit {
   }
 
   certificateList() {
-    this.certificateService.getAllCertificates().subscribe(
+    this.certificateService.getAllCertificatesByUserID().subscribe(
       result => {
         this.certificates = result;
       },

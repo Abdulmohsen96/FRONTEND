@@ -1,8 +1,8 @@
 <ul class="list-group" *ngFor="let certificate of certificates">
     <li class="list-group-item">
-        <h4 class="list-group-item-heading">{{certificate.certificateName}}</h4>
         <div class="d-flex justify-content-between">
-            <p class="list-group-item-text">{{certificate.certificateType}}</p>
+            <h4 class="list-group-item-heading">{{ certificate.certificateName }}
+            </h4>
             <div *ngIf="certificate.certificateType === 'text/plain'">
                 <i class="fa fa-file-text fa-2x"></i>
             </div>
@@ -10,6 +10,10 @@
                 <i class="fa fa-file-pdf-o fa-2x"></i>
             </div>
             <div *ngIf="certificate.certificateType === 'application/msword'">
+                <i class="fa fa-file-word-o fa-2x"></i>
+            </div>
+            <div *ngIf="certificate.certificateType ===
+                'application/vnd.openxmlformats-officedocument.wordprocessingml.document'">
                 <i class="fa fa-file-word-o fa-2x"></i>
             </div>
             <div *ngIf="certificate.certificateType ===
@@ -33,23 +37,26 @@
                 <i class="fa fa-file-video-o fa-2x"></i>
             </div>
         </div>
+
+        <span class="badge badge-warning" *ngIf="certificate.certificateStatus
+            ===
+            'Pending'">{{
+            certificate.certificateStatus }}</span>
+        <span class="badge badge-success" *ngIf="certificate.certificateStatus
+            ===
+            'Verified'">{{
+            certificate.certificateStatus }}</span>
+        <span class="badge badge-danger" *ngIf="certificate.certificateStatus
+            ===
+            'Declined'">{{
+            certificate.certificateStatus }}</span>
     </li>
+
     <div class="row">
+        <div class="col-sm-4 text-center"></div>
         <div class="col-sm-4 text-center">
-
+            <hr />
         </div>
-        <div class="col-sm-4 text-center">
-            <br>
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped"
-                    role="progressbar"
-                    aria-valuenow="100"
-                    aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
-            </div>
-            <br>
-        </div>
-        <div class="col-sm-4 text-center">
-
-        </div>
+        <div class="col-sm-4 text-center"></div>
     </div>
 </ul>
