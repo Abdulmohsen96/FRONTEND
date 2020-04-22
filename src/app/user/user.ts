@@ -1,3 +1,5 @@
+import { Authority } from '../authority/authority';
+
 export class User {
     userID: number;
     fullName: string;
@@ -8,4 +10,5 @@ export class User {
     nationalID: string;
     enabled: number;
     authdata?: string;
+    authorityName: Authority;
 }

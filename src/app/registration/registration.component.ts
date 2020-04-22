@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { User } from '../user/user';
 import { UserService } from '../user/user.service';
+import { Authority } from '../authority/authority';
 
 @Component({
   selector: 'app-registration',
@@ -18,7 +19,8 @@ export class RegistrationComponent implements OnInit {
     email: null,
     password: null,
     nationalID: null,
-    enabled: 1
+    enabled: 1,
+    authorityName: new Authority(1, "ROLE_INDIVIDUAL"),
   }
 
   form = new FormGroup({
