@@ -13,10 +13,10 @@ const routes: Routes = [
   { path: '', component: AppComponent, canActivate: [AuthGuard] },
   { path: 'home', component: AppComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
-  { path: 'registration', component: RegistrationComponent },
+  { path: 'registration', component: RegistrationComponent, canActivate: [AuthGuard] },
   { path: 'header', component: HeaderComponent },
-  { path: 'users', component: UserListComponent },
-  { path: 'profile', component: ProfileComponent },
+  { path: 'users', component: UserListComponent, canActivate: [AuthGuard] },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'logout', component: LoginComponent },
 ];
 
