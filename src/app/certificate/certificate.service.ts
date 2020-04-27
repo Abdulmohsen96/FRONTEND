@@ -12,7 +12,7 @@ export class CertificateService {
     private AddCertificatesURL = "http://localhost:8080/Certificates/AddCertificate"
     private GetAllCertificatesURL = "http://localhost:8080/Certificates/GetAllCertificates";
     private GetCertificateByIdURL = "http://localhost:8080/Certificates/GetAllUsers/";
-    private DeleteCertificatesURL = "http://localhost:8080/Certificates/DeleteUser/";
+    private DeleteCertificatesURL = "http://localhost:8080/Certificates/DeleteCertificate/";
     private UploadCertificatesURL = "http://localhost:8080/Certificates/UploadCertificate";
     private GetAllCertificatesByUserIdURL = "http://localhost:8080/Certificates/GetAllCertificates/" + this.authService.getUserID();
     private UpdateFileURL = "http://localhost:8080/Certificates/UpdateFile/" + this.authService.getUserID();
@@ -26,6 +26,10 @@ export class CertificateService {
 
     getAllCertificates(): Observable<Certificate[]> {
         return this.httpClient.get<Certificate[]>(this.GetAllCertificatesURL);
+    }
+
+    deleteCertificate(certificateID: number) {
+        return this.httpClient.delete(this.DeleteCertificatesURL + certificateID);
     }
 
     uploadFile(formdata: any): Observable<Certificate> {

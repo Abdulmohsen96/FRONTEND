@@ -27,4 +27,13 @@ export class CertificateListComponent implements OnInit {
     )
   }
 
+  deleteCertificate(certificate: Certificate) {
+    this.certificateService.deleteCertificate(certificate.certificateID).subscribe(
+      result => {
+        let index = this.certificates.indexOf(certificate);
+        this.certificates.splice(index, 1);
+      }
+    )
+  }
+
 }

@@ -1,8 +1,11 @@
 <ul class="list-group" *ngFor="let certificate of certificates">
     <li class="list-group-item">
+
         <div class="d-flex justify-content-between">
-            <h4 class="list-group-item-heading">{{ certificate.certificateName }}
+            <h4 class="list-group-item-heading">{{ certificate.certificateName
+                }}
             </h4>
+
             <div *ngIf="certificate.certificateType === 'text/plain'">
                 <i class="fa fa-file-text fa-2x"></i>
             </div>
@@ -38,18 +41,33 @@
             </div>
         </div>
 
-        <span class="badge badge-warning" *ngIf="certificate.certificateStatus
-            ===
-            'Pending'">{{
-            certificate.certificateStatus }}</span>
-        <span class="badge badge-success" *ngIf="certificate.certificateStatus
-            ===
-            'Verified'">{{
-            certificate.certificateStatus }}</span>
-        <span class="badge badge-danger" *ngIf="certificate.certificateStatus
-            ===
-            'Declined'">{{
-            certificate.certificateStatus }}</span>
+        <br>
+
+        <div class="d-flex justify-content-between">
+            <div>
+                <span class="badge badge-warning"
+                    *ngIf="certificate.certificateStatus
+                    ===
+                    'Pending'">{{
+                    certificate.certificateStatus }}</span>
+                <span class="badge badge-success"
+                    *ngIf="certificate.certificateStatus
+                    ===
+                    'Verified'">{{
+                    certificate.certificateStatus }}</span>
+                <span class="badge badge-danger"
+                    *ngIf="certificate.certificateStatus
+                    ===
+                    'Declined'">{{
+                    certificate.certificateStatus }}</span>
+            </div>
+
+            <div>
+                <i class="fa fa-trash fa-2x"
+                    (click)="deleteCertificate(certificate)"></i>
+            </div>
+        </div>
+
     </li>
 
     <div class="row">

@@ -1,22 +1,21 @@
 <div class="content-wrapper">
     <div class="container container-content">
         <div class="row">
-
             <div class="col-sm-4">
                 <div class="card border-dark mt-5 text-center">
                     <div class="card-header"><i class="fa fa-user-circle-o
                             fa-3x"></i></div>
+
                     <div class="card-body">
                         <h5 class="card-title">{{user.fullName}}</h5>
                         <p class="card-text">{{user.phoneNumber}} | {{user.dob}}</p>
                     </div>
+
                     <div class="card-footer d-flex justify-content-between">
                         <button type="button" class="btn
                             btn-dark btn-sm active" (click)="toggle()"><b>Upload<br>Certificates</b></button>
                         <button type="button" class="btn
                             btn-dark btn-sm active"><b>Edit<br>Certificates</b></button>
-                        <button type="button" class="btn
-                            btn-dark btn-sm active"><b>Delete<br>Certificates</b></button>
                     </div>
                 </div>
                 <app-upload-certificate *ngIf="show"></app-upload-certificate>
