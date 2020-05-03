@@ -63,18 +63,22 @@
             </div>
 
             <div>
-                <i class="fa fa-trash fa-2x"
-                    (click)="deleteCertificate(certificate)"></i>
+                <a style="cursor: pointer;"
+                    (click)="deleteCertificate(certificate)">
+                    <i class="fa fa-trash fa-2x" style="color: maroon;"></i>
+                </a>
             </div>
+        </div>
+
+        <div>
+            <a style="cursor: pointer;"
+                (click)="editCertificate(certificate.certificateID)">
+                <i class="fa fa-pencil fa-2x"></i>
+            </a>
         </div>
 
     </li>
 
-    <div class="row">
-        <div class="col-sm-4 text-center"></div>
-        <div class="col-sm-4 text-center">
-            <hr />
-        </div>
-        <div class="col-sm-4 text-center"></div>
-    </div>
+    <br>
+
 </ul>

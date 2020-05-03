@@ -17,6 +17,7 @@ import { ErrorInterceptor } from './authentication/error.interceptor';
 import { UploadCertificateComponent } from './upload-certificate/upload-certificate.component';
 import { CertificateService } from './certificate/certificate.service';
 import { CertificateListComponent } from './certificate-list/certificate-list.component';
+import { EditCertificateComponent } from './edit-certificate/edit-certificate.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CertificateListComponent } from './certificate-list/certificate-list.co
     ProfileComponent,
     LogoutComponent,
     UploadCertificateComponent,
-    CertificateListComponent
+    CertificateListComponent,
+    EditCertificateComponent
   ],
   imports: [
     BrowserModule,

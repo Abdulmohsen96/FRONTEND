@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthGuard } from './authentication/auth.guard';
+import { EditCertificateComponent } from './edit-certificate/edit-certificate.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'header', component: HeaderComponent },
   { path: 'users', component: UserListComponent, canActivate: [AuthGuard] },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+  { path: 'edit-certificate/:certificateID', component: EditCertificateComponent, canActivate: [AuthGuard] },
   { path: 'logout', component: LoginComponent },
 ];
 
