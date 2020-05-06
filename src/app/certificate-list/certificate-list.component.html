@@ -2,8 +2,9 @@
     <li class="list-group-item">
 
         <div class="d-flex justify-content-between">
-            <h4 class="list-group-item-heading">{{ certificate.certificateName
-                }}
+            <h4 class="list-group-item-heading"><kbd>{{
+                    certificate.certificateName
+                    }}</kbd>
             </h4>
 
             <div *ngIf="certificate.certificateType === 'text/plain'">
@@ -63,18 +64,16 @@
             </div>
 
             <div>
-                <a style="cursor: pointer;"
+                <a style="cursor: pointer; margin-right: 15px;"
                     (click)="deleteCertificate(certificate)">
-                    <i class="fa fa-trash fa-2x" style="color: maroon;"></i>
+                    <i class="fa fa-trash fa-2x" style="color: red;"></i>
+                </a>
+                <a style="cursor: pointer;"
+                    (click)="editCertificate(certificate.certificateID)">
+                    <i class="fa fa-pencil fa-2x"></i>
                 </a>
             </div>
-        </div>
 
-        <div>
-            <a style="cursor: pointer;"
-                (click)="editCertificate(certificate.certificateID)">
-                <i class="fa fa-pencil fa-2x"></i>
-            </a>
         </div>
 
     </li>

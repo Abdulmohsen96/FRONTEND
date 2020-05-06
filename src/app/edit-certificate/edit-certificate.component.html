@@ -1,3 +1,35 @@
-<p>edit-certificate works!</p>
-<p>{{certificate.certificateID}}</p>
-<p>{{certificate.certificateName}}</p>
+<div class="container">
+    <h1 class="display-1 form-group">Edit Certificate</h1>
+
+    <form name="editCertForm" [formGroup]="editCertForm"
+        (ngSubmit)="updateCertificate()">
+
+        <div class="form-group">
+            <label for="Name" class="lead">Name</label>
+            <input formControlName="Name" class="form-control
+                col-sm-4"
+                [(ngModel)]="certificate.certificateName">
+        </div>
+
+        <div class="form-group">
+            <label for="Description" class="lead">Description</label>
+            <textarea formControlName="Description" class="form-control
+                col-sm-4"
+                [(ngModel)]="certificate.certificateDescription"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="Date" class="lead">Date</label>
+            <input formControlName="Date" class="form-control col-sm-4"
+                type="date"
+                [(ngModel)]="certificate.certificateDate">
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-lg"
+                [disabled]="!editCertForm.valid"><i
+                    class="fa fa-edit"></i> Submit Changes</button>
+        </div>
+
+    </form>
+</div>

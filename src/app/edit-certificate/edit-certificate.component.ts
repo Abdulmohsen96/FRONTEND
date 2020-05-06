@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CertificateService } from '../certificate/certificate.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Certificate } from '../certificate/certificate';
+import { FormBuilder, Validators } from '@angular/forms';
+
 
 
 @Component({
@@ -11,8 +13,15 @@ import { Certificate } from '../certificate/certificate';
 })
 export class EditCertificateComponent implements OnInit {
 
-  certificate: Certificate
-  constructor(private certificateService: CertificateService, private route: ActivatedRoute) { }
+  constructor(private certificateService: CertificateService, private route: ActivatedRoute, private formBuilder: FormBuilder, private router: Router) { }
+
+  certificate: Certificate;
+
+  editCertForm = this.formBuilder.group({
+    Name: ['', Validators.required],
+    Description: ['', Validators.required],
+    Date: ['', Validators.required]
+  });
 
   ngOnInit(): void {
     let id = parseInt(this.route.snapshot.paramMap.get('certificateID'));
@@ -23,6 +32,17 @@ export class EditCertificateComponent implements OnInit {
     this.certificateService.getCertificate(certificateID).subscribe(
       res => {
         this.certificate = res;
+      },
+      err => {
+        console.log(err);
+      }
+    )
+  }
+
+  updateCertificate() {
+    this.certificateService.updateCertificate(this.certificate, this.certificate.certificateID).subscribe(
+      res => {
+        this.router.navigate(['/profile'])
       },
       err => {
         console.log(err);
