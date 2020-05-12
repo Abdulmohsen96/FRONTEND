@@ -34,7 +34,7 @@ export class EditCertificateComponent implements OnInit {
         this.certificate = res;
       },
       err => {
-        console.log(err);
+        this.router.navigate(['/not-found']);
       }
     )
   }
@@ -42,7 +42,7 @@ export class EditCertificateComponent implements OnInit {
   updateCertificate() {
     this.certificateService.updateCertificate(this.certificate, this.certificate.certificateID).subscribe(
       res => {
-        this.router.navigate(['/profile'])
+        this.router.navigate(['/profile']);
       },
       err => {
         console.log(err);

@@ -18,6 +18,7 @@ import { UploadCertificateComponent } from './upload-certificate/upload-certific
 import { CertificateService } from './certificate/certificate.service';
 import { CertificateListComponent } from './certificate-list/certificate-list.component';
 import { EditCertificateComponent } from './edit-certificate/edit-certificate.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { EditCertificateComponent } from './edit-certificate/edit-certificate.co
     LogoutComponent,
     UploadCertificateComponent,
     CertificateListComponent,
-    EditCertificateComponent
+    EditCertificateComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

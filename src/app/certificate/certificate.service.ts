@@ -30,7 +30,7 @@ export class CertificateService {
     }
 
     getCertificate(certificateID: number): Observable<Certificate> {
-        return this.httpClient.get<Certificate>(this.GetCertificateByIdURL + certificateID);
+        return this.httpClient.get<Certificate>(this.GetCertificateByIdURL + certificateID + "/" + this.authService.getUserID());
     }
 
     updateCertificate(certificate: Certificate, certificateID: number): Observable<Certificate> {
