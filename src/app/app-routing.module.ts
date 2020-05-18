@@ -9,11 +9,12 @@ import { ProfileComponent } from './profile/profile.component';
 import { AuthGuard } from './authentication/auth.guard';
 import { EditCertificateComponent } from './edit-certificate/edit-certificate.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AddOrganizationComponent } from './add-organization/add-organization.component';
 
 
 const routes: Routes = [
-  { path: '', component: AppComponent, canActivate: [AuthGuard] },
-  { path: 'home', component: AppComponent, canActivate: [AuthGuard] },
+  { path: '', component: AppComponent },
+  { path: 'home', component: AppComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
   { path: 'header', component: HeaderComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'edit-certificate/:certificateID', component: EditCertificateComponent, canActivate: [AuthGuard] },
   { path: 'logout', component: LoginComponent },
+  { path: 'addOrganization', component: AddOrganizationComponent },
   { path: 'not-found', component: PageNotFoundComponent },
   { path: '**', redirectTo: '/not-found' },
 ];

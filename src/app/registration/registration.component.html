@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container">
     <h1 class="display-1 form-group">Register an account</h1>
 
     <form name="form" [formGroup]="form" (ngSubmit)="addUser()">
@@ -6,7 +6,8 @@
         <div class="form-group">
             <label for="fullName" class="lead">Fullname</label>
             <input class="form-control col-sm-4" type="text"
-                formControlName="fullName" [ngClass]="{'is-invalid':
+                formControlName="fullName" name="fullname"
+                [ngClass]="{'is-invalid':
                 form.get('fullName').touched && form.get('fullName').invalid}"
                 [(ngModel)]="user.fullName">
             <div *ngIf="form.get('fullName').touched &&
@@ -21,7 +22,7 @@
         <div class="form-group">
             <label for="dob" class="lead">Date of Birth</label>
             <input class="form-control col-sm-4" type="date"
-                formControlName="dob" [ngClass]="{'is-invalid':
+                formControlName="dob" name="dob" [ngClass]="{'is-invalid':
                 form.get('dob').touched && form.get('dob').invalid}"
                 [(ngModel)]="user.dob">
             <div class="invalid-feedback">
@@ -32,7 +33,8 @@
         <div class="form-group">
             <label for="phoneNumber" class="lead">Phone Number</label>
             <input class="form-control col-sm-4" type="text"
-                formControlName="phoneNumber" [ngClass]="{'is-invalid':
+                formControlName="phoneNumber" name="phoneNumber"
+                [ngClass]="{'is-invalid':
                 form.get('phoneNumber').touched &&
                 form.get('phoneNumber').invalid}"
                 [(ngModel)]="user.phoneNumber">
@@ -53,7 +55,7 @@
         <div class="form-group">
             <label for="email" class="lead">Email</label>
             <input class="form-control col-sm-4" type="email"
-                formControlName="email" [ngClass]="{'is-invalid':
+                formControlName="email" name="email" [ngClass]="{'is-invalid':
                 form.get('email').touched && form.get('email').invalid}"
                 [(ngModel)]="user.email">
             <div *ngIf="form.get('email').touched &&
@@ -68,7 +70,8 @@
         <div class="form-group">
             <label for="password" class="lead">Password</label>
             <input class="form-control col-sm-4" type="password"
-                formControlName="password" [ngClass]="{'is-invalid':
+                formControlName="password" name="password"
+                [ngClass]="{'is-invalid':
                 form.get('password').touched && form.get('password').invalid}"
                 [(ngModel)]="user.password">
             <div *ngIf="form.get('password').touched &&
@@ -83,7 +86,8 @@
         <div class="form-group">
             <label for="nationalID" class="lead">National ID</label>
             <input class="form-control col-sm-4" type="text"
-                formControlName="nationalID" [ngClass]="{'is-invalid':
+                formControlName="nationalID" name="nationalID"
+                [ngClass]="{'is-invalid':
                 form.get('nationalID').touched &&
                 form.get('nationalID').invalid}" [(ngModel)]="user.nationalID">
             <div *ngIf="form.get('nationalID').touched &&
@@ -101,7 +105,7 @@
         </div>
 
         <div class="form-group">
-            <button type="submit" class="btn btn-lg"
+            <button class="btn btn-lg mt-3"
                 [disabled]="!form.valid"><i class="fa fa-plus"></i>
                 Register</button>
         </div>

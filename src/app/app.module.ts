@@ -19,6 +19,8 @@ import { CertificateService } from './certificate/certificate.service';
 import { CertificateListComponent } from './certificate-list/certificate-list.component';
 import { EditCertificateComponent } from './edit-certificate/edit-certificate.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { OrganizationService } from './organization/organization.service';
+import { AddOrganizationComponent } from './add-organization/add-organization.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     UploadCertificateComponent,
     CertificateListComponent,
     EditCertificateComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AddOrganizationComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [UserService, CertificateService,
+  providers: [UserService, CertificateService, OrganizationService,
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 

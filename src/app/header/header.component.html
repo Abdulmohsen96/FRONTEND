@@ -32,6 +32,12 @@
             class="fa
             fa-sign-in"></i> Login</a>
 
+        <a class="nav-item nav-link" routerLink="/addOrganization"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}" *ngIf="!isLogged()"><i
+            class="fa
+            fa-sitemap"></i> Add Organization</a>
+
         <a class="nav-item nav-link" routerLink="/users"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{exact: true}" *ngIf="isLogged()"><i

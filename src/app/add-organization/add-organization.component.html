@@ -1,0 +1,36 @@
+<div class="container">
+    <h1 class="display-1 form-group">Add Organization</h1>
+
+    <form name="organizationForm" [formGroup]="organizationForm"
+        (ngSubmit)="addOrganization()">
+
+        <div class="form-group">
+            <label for="organizationName" class="lead">Organization Name</label>
+            <input formControlName="organizationName" class="form-control
+                col-sm-4" type="text"
+                [(ngModel)]="organization.organizationName">
+        </div>
+
+        <div class="form-group">
+            <label for="organizationAddress" class="lead">Organization Address</label>
+            <input formControlName="organizationAddress" class="form-control
+                col-sm-4" type="text"
+                [(ngModel)]="organization.organizationAddress">
+        </div>
+
+        <div class="form-group">
+            <label for="organizationContactNumber" class="lead">Organization
+                Contact Number</label>
+            <input formControlName="organizationContactNumber"
+                class="form-control col-sm-4" type="number"
+                [(ngModel)]="organization.organizationContactNumber">
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-lg mt-3"
+                [disabled]="!organizationForm.valid"><i
+                    class="fa fa-check"></i> Submit</button>
+        </div>
+
+    </form>
+</div>
