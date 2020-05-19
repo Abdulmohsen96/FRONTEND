@@ -12,11 +12,13 @@ import { AuthenticationService } from '../authentication/authentication.service'
 export class ProfileComponent implements OnInit {
   user: User;
   show = false;
+  role: string;
 
   constructor(private route: ActivatedRoute, private userService: UserService, private authService: AuthenticationService) { }
 
   ngOnInit(): void {
-    this.getUserProfile()
+    this.getUserProfile();
+    this.role = this.authService.getRole();
   }
 
   getUserProfile() {

@@ -1,4 +1,5 @@
 import { Authority } from '../authority/authority';
+import { Organization } from '../organization/organization';
 
 export class User {
     userID: number;
@@ -11,4 +12,5 @@ export class User {
     enabled: number;
     authdata?: string;
     authorityName: Authority;
+    userOrganization: Organization
 }

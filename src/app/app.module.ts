@@ -21,6 +21,7 @@ import { EditCertificateComponent } from './edit-certificate/edit-certificate.co
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { OrganizationService } from './organization/organization.service';
 import { AddOrganizationComponent } from './add-organization/add-organization.component';
+import { OrganizationRegistrationComponent } from './organization-registration/organization-registration.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AddOrganizationComponent } from './add-organization/add-organization.co
     CertificateListComponent,
     EditCertificateComponent,
     PageNotFoundComponent,
-    AddOrganizationComponent
+    AddOrganizationComponent,
+    OrganizationRegistrationComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,51 @@
+<div class="container">
+    <h1 class="display-3 form-group">Register an account for Organization</h1>
+    <form name="organizationRegistrationForm"
+        [formGroup]="organizationRegistrationForm"
+        (ngSubmit)="getOrganization()">
+
+        <div class="form-group">
+            <label for="organizationSelect" class="lead">Choose Organization</label>
+            <br>
+            <select class="form-control custom-select col-sm-4"
+                id="organizationSelect" name="organizationSelect"
+                formControlName="organizationSelect">
+                <option selected>Choose...</option>
+                <option *ngFor="let organization of organizations">{{organization.organizationName}}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="accountName" class="lead">Account Name</label>
+            <input class="form-control col-sm-4" type="text"
+                formControlName="accountName" name="accountName"
+                [(ngModel)]="user.fullName">
+        </div>
+
+        <div class="form-group">
+            <label for="email" class="lead">Email</label>
+            <input class="form-control col-sm-4" type="email"
+                formControlName="email" name="email" [(ngModel)]="user.email">
+        </div>
+
+        <div class="form-group">
+            <label for="password" class="lead">Password</label>
+            <input class="form-control col-sm-4" type="password"
+                formControlName="password" name="password"
+                [(ngModel)]="user.password">
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-lg mt-3"
+                [disabled]="!organizationRegistrationForm.valid"><i class="fa
+                    fa-plus"></i>
+                Register</button>
+        </div>
+
+        <div class="form-group">
+            <a routerLink="/login" style="text-decoration: none;"><samp
+                    class="lead">Organization Already Registered? Login here <i
+                        class="fa fa-arrow-right"></i></samp></a>
+        </div>
+    </form>
+</div>

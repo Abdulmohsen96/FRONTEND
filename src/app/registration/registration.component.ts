@@ -21,6 +21,7 @@ export class RegistrationComponent implements OnInit {
     nationalID: null,
     enabled: 1,
     authorityName: new Authority(1, "ROLE_INDIVIDUAL"),
+    userOrganization: null
   }
 
   form = new FormGroup({

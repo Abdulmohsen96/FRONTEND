@@ -10,6 +10,7 @@ export class OrganizationService {
 
   private AddOrganizationURL = "http://localhost:8080/Users/AddOrganization";
   private GetOrganizationURL = "http://localhost:8080/Users/GetOrganization/";
+  private GetAllOrganizationsURL = "http://localhost:8080/Users/GetAllOrganizations";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -19,5 +20,9 @@ export class OrganizationService {
 
   getOrganization(organizationName: string): Observable<Organization> {
     return this.httpClient.get<Organization>(this.GetOrganizationURL + organizationName);
+  }
+
+  getAllOrganizations(): Observable<Organization[]> {
+    return this.httpClient.get<Organization[]>(this.GetAllOrganizationsURL);
   }
 }

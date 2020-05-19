@@ -13,6 +13,7 @@ export class AddOrganizationComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private organizationService: OrganizationService) { }
 
   organization: Organization = {
+    organizationID: 0,
     organizationName: null,
     organizationAddress: null,
     organizationContactNumber: null

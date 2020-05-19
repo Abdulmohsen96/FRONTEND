@@ -24,7 +24,12 @@
           routerLinkActive="active"
           [routerLinkActiveOptions]="{exact: true}" *ngIf="!isLogged()"><i
             class="fa
-            fa-user-plus"></i> Register</a>
+            fa-user-plus"></i> Registration</a>
+
+        <a class="nav-item nav-link" routerLink="/organizationRegistration"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}" *ngIf="!isLogged()"><i
+            class="fa fa-user-secret"></i> Organization Registration</a>
 
         <a class="nav-item nav-link" routerLink="/login"
           routerLinkActive="active"
