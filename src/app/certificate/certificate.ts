@@ -1,4 +1,5 @@
 import { User } from '../user/user';
+import { Organization } from '../organization/organization';
 
 export class Certificate {
     certificateID: number;
@@ -6,4 +7,5 @@ export class Certificate {
     certificateType: string;
     certificateDescription: string;
     certificateDate: string;
+    certificateOrganization: Organization;
 }

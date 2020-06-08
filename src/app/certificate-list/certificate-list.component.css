@@ -9,3 +9,9 @@ ul {
 i {
     color: #CBCBCB;
 }
+
+kbd, h4 {
+    overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}

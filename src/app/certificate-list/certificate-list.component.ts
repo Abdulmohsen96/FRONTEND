@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Certificate } from '../certificate/certificate';
 import { CertificateService } from '../certificate/certificate.service';
 import { Router } from '@angular/router';
+import { Organization } from '../organization/organization';
 
 @Component({
   selector: 'app-certificate-list',
@@ -12,6 +13,7 @@ export class CertificateListComponent implements OnInit {
 
   constructor(private certificateService: CertificateService, private router: Router) { }
   certificates: Certificate[];
+  organization: Organization;
 
   ngOnInit(): void {
     this.certificateList();

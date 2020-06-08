@@ -4,8 +4,21 @@
     <form name="uploadForm" [formGroup]="uploadForm"
         (ngSubmit)="uploadFile()">
         <div class="form-group">
+            <label for="uploadFile" class="lead">Choose File</label>
+            <br>
             <input id="uploadFile" name="uploadFile" class="form-control"
                 type="file" style="padding-bottom: 40px; cursor: pointer;">
+        </div>
+
+        <div class="form-group">
+            <label for="organizationSelect" class="lead">Choose Organization</label>
+            <br>
+            <select class="form-control custom-select"
+                id="organizationSelect" name="organizationSelect"
+                formControlName="organizationSelect">
+                <option selected>Choose...</option>
+                <option *ngFor="let organization of organizations">{{organization.organizationName}}</option>
+            </select>
         </div>
 
         <div class="form-group">
