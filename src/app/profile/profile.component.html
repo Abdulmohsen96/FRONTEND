@@ -1,4 +1,4 @@
-<div class="content-wrapper">
+<div class="content-wrapper" *ngIf="role === 'ROLE_INDIVIDUAL'">
     <div class="container container-content">
         <div class="row">
             <div class="col-sm-4 mt-5">
@@ -13,7 +13,6 @@
                         <p class="card-text"><i class="fa fa-calendar"></i>
                             {{user.dob |
                             date: 'dd/MM/yyyy'}}</p>
-                        <p>Role: {{role}}</p>
                     </div>
 
                     <div class="card-footer">
@@ -26,8 +25,40 @@
 
             <div class="col-sm-8 mt-2">
                 <div class="content">
-                    <h3>Certificates</h3>
+                    <h3>Certificates & Experiences</h3>
                     <app-certificate-list></app-certificate-list>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+//---------------------------------\\
+
+<div class="content-wrapper" *ngIf="role === 'ROLE_ORGANIZATION'">
+    <div class="container container-content">
+        <div class="row">
+            <div class="col-sm-4 mt-5">
+                <div class="card bg text-center">
+                    <div class="card-header"><i class="fa fa-building
+                            fa-3x"></i></div>
+
+                    <div class="card-body text-left">
+                        <h5 class="card-title">{{user.fullName}}</h5>
+                        <p class="card-text"><i class="fa fa-phone-square"></i>
+                            {{user.phoneNumber}}</p>
+                        <p class="card-text"><i class="fa fa-calendar"></i>
+                            {{user.dob |
+                            date: 'dd/MM/yyyy'}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-8 mt-2">
+                <div class="content">
+                    <h3>Certificates & Experiences</h3>
+                    <app-certificate-list-org></app-certificate-list-org>
                 </div>
             </div>
 

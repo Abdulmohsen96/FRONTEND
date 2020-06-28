@@ -53,4 +53,10 @@ export class AuthenticationService {
       return currentUser.role;
   }
 
+  getOrganizationID(): number {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if (currentUser)
+      return currentUser.organizationID;
+  }
+
 }

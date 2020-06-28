@@ -1,0 +1,17 @@
+li {
+    background-color: #3E444A;
+}
+
+ul {
+    border-radius: 9px;
+}
+
+i {
+    color: #CBCBCB;
+}
+
+kbd, h4 {
+    overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}

@@ -1,0 +1,86 @@
+<ul class="list-group" *ngFor="let certificate of certificates">
+    <li class="list-group-item" *ngIf="certificate.certificateStatus !=
+        'Verified'">
+
+        <div class="d-flex justify-content-between">
+            <h4 class="list-group-item-heading"><kbd>{{
+                    certificate.certificateName
+                    }}</kbd>
+            </h4>
+
+            <div *ngIf="certificate.certificateType === 'text/plain'">
+                <i class="fa fa-file-text fa-2x"></i>
+            </div>
+            <div *ngIf="certificate.certificateType === 'application/pdf'">
+                <i class="fa fa-file-pdf-o fa-2x"></i>
+            </div>
+            <div *ngIf="certificate.certificateType === 'application/msword'">
+                <i class="fa fa-file-word-o fa-2x"></i>
+            </div>
+            <div *ngIf="certificate.certificateType ===
+                'application/vnd.openxmlformats-officedocument.wordprocessingml.document'">
+                <i class="fa fa-file-word-o fa-2x"></i>
+            </div>
+            <div *ngIf="certificate.certificateType ===
+                'application/vnd.ms-excel'">
+                <i class="fa fa-file-excel-o fa-2x"></i>
+            </div>
+            <div *ngIf="certificate.certificateType === 'image/jpeg'">
+                <i class="fa fa-file-image-o fa-2x"></i>
+            </div>
+            <div *ngIf="certificate.certificateType === 'image/png'">
+                <i class="fa fa-file-image-o fa-2x"></i>
+            </div>
+            <div *ngIf="certificate.certificateType === 'image/gif'">
+                <i class="fa fa-file-image-o fa-2x"></i>
+            </div>
+            <div *ngIf="certificate.certificateType ===
+                'application/vnd.openxmlformats-officedocument.presentationml.presentation'">
+                <i class="fa fa-file-powerpoint-o fa-2x"></i>
+            </div>
+            <div *ngIf="certificate.certificateType === 'video/mp4'">
+                <i class="fa fa-file-video-o fa-2x"></i>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="d-flex justify-content-between">
+            <div>
+                <span class="badge badge-warning"
+                    *ngIf="certificate.certificateStatus
+                    ===
+                    'Pending'">{{
+                    certificate.certificateStatus }}</span>
+                <span class="badge badge-success"
+                    *ngIf="certificate.certificateStatus
+                    ===
+                    'Verified'">{{
+                    certificate.certificateStatus }}</span>
+                <span class="badge badge-danger"
+                    *ngIf="certificate.certificateStatus
+                    ===
+                    'Declined'">{{
+                    certificate.certificateStatus }}</span>
+            </div>
+
+            <div>
+                <a style="cursor: pointer; margin-right: 15px;"
+                    (click)="verifyCertificate(certificate, 'Verified')">
+                    <i class="fa fa-check-circle-o fa-3x" style="color:
+                        darkgreen;"></i>
+                </a>
+                <a style="cursor: pointer;"
+                    (click)="declineCertificate(certificate, 'Declined')">
+                    <i class="fa fa-times-circle-o fa-3x" style="color:
+                        crimson;"></i>
+                </a>
+            </div>
+
+        </div>
+
+    </li>
+
+    <br>
+
+</ul>

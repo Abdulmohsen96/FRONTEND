@@ -16,7 +16,10 @@ export class CertificateService {
     private DeleteCertificatesURL = "http://localhost:8080/Certificates/DeleteCertificate/";
     private UploadCertificatesURL = "http://localhost:8080/Certificates/UploadCertificate";
     private GetAllCertificatesByUserIdURL = "http://localhost:8080/Certificates/GetAllCertificates/" + this.authService.getUserID();
+    private GetAllCertificatesByOrganizationIdURL = "http://localhost:8080/Certificates/GetAllCertificatesForOrg/" + this.authService.getOrganizationID();
     private UpdateFileURL = "http://localhost:8080/Certificates/UpdateFile/" + this.authService.getUserID() + "/";
+    private UpdateStatusURL = "http://localhost:8080/Certificates/UpdateStatus/" + this.authService.getOrganizationID() + "/";
+
 
 
     constructor(private httpClient: HttpClient, private authService: AuthenticationService) { }
@@ -49,8 +52,16 @@ export class CertificateService {
         return this.httpClient.get<Certificate[]>(this.GetAllCertificatesByUserIdURL);
     }
 
+    getAllCertificatesByOrganizationID(): Observable<Certificate[]> {
+        return this.httpClient.get<Certificate[]>(this.GetAllCertificatesByOrganizationIdURL);
+    }
+
     updateFile(certificate: Certificate, organizationID: number) {
         return this.httpClient.put(this.UpdateFileURL + organizationID, certificate);
+    }
+
+    updateStatus(certificate: Certificate, certificateSatus: string) {
+        return this.httpClient.put(this.UpdateStatusURL + certificateSatus, certificate);
     }
 
 }
